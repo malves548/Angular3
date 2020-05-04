@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { pessoas } from './pessoas.module';
+import { PessoasService } from './pessoas.service';
 
 @Component({
   selector: 'app-pessoas',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PessoasComponent implements OnInit {
 
-  constructor() { }
+  pessoasArray: pessoas[] = []
+
+  detalhePessoa: boolean = false
+
+  pessoas: pessoas
+
+  AlterarPessoa(novaPessoa) { }
+
+  constructor(private eventosService: PessoasService) { }
 
   ngOnInit(): void {
+    this.pessoasArray = this.eventosService.getPessoas()
   }
 
 }

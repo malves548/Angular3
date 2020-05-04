@@ -1,1 +1,25 @@
-<p>pessoas works!</p>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Detalhes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let pessoa of pessoasArray'>
+        <td>{{pessoa.id}}</td>
+        <td>{{pessoa.name}}</td>
+        <td>{{pessoa.email}}</td>
+        <td>Detalhes</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>{{pessoa.name}}</div>
+<div>
+  <app-pessoas-detalhe (novaPessoa)="AlterarPessoa($event)"></app-pessoas-detalhe>
+</div>
