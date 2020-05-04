@@ -8,19 +8,25 @@ import { PessoasService } from './pessoas.service';
   styleUrls: ['./pessoas.component.css']
 })
 export class PessoasComponent implements OnInit {
-
   pessoasArray: pessoas[] = []
-
   detalhePessoa: boolean = false
+  humano: pessoas
 
-  pessoas: pessoas
 
-  AlterarPessoa(novaPessoa) { }
-
-  constructor(private eventosService: PessoasService) { }
+  constructor(private pessoasService: PessoasService) { }
 
   ngOnInit(): void {
-    this.pessoasArray = this.eventosService.getPessoas()
+    this.pessoasArray = this.pessoasService.getPessoas()
+    console.log(this.pessoasArray)
   }
 
+  detalheDaPessoa(pessoa) {
+    console.log(pessoa)
+    this.detalhePessoa = true
+    this.humano = pessoa
+  }
+
+  alterarPessoa(pessoa) {
+    this.pessoasService.alterarPessoa(pessoa)
+  }
 }

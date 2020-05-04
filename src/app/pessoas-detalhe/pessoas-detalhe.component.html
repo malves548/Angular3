@@ -1,1 +1,21 @@
-<p>pessoas-detalhe works!</p>
+<h3>Detalhe da Pessoa</h3>
+<div>
+  <p>name: {{pessoa.name}}</p>
+  <p>idade: {{pessoa.idade}}</p>
+  <p>cor dos olhos: {{pessoa.corOlhos}}</p>
+  <p>sexo: {{pessoa.sexo}}</p>
+  <p>email: {{pessoa.email}}</p>
+  <button (click)="atualizarDados()">Atualizar Dados</button>
+</div>
+
+<div class="style">
+  <h3>Alterar Dados</h3>
+  <form>
+    <p><input type="text" placeholder="nome" ref-name></p>
+    <p><input type="number" placeholder="idade" ref-idade></p>
+    <p><input type="text" placeholder="cor dos olhos" ref-corOlhos></p>
+    <p><input type="text" placeholder="sexo" ref-sexo></p>
+    <p><input type="text" placeholder="email" ref-email></p>
+  </form>
+  <button (click)="confirmarDados(name.value, idade.value, corOlhos.value, sexo.value, email.value)">Confirmar</button>
+</div>
